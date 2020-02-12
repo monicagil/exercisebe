@@ -1,0 +1,20 @@
+spring.datasource:
+  driverClassName: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/ci_cadreon_optimization?useUnicode=true&characterEncoding=UTF-8&rewriteBatchedStatements=true&serverTimezone=UTC&useLegacyDatetimeCode=false
+  username: root
+  dialect: org.hibernate.dialect.MySQL5Dialect
+
+spring.jpa:
+  show-sql: true
+  hibernate:
+    dialect: org.hibernate.dialect.MySQL5Dialect
+    ddl-auto: none
+    hikari:
+      maximumPoolSize: 50
+
+hibernate:
+  jdbc:
+    batch_size: 100
+    order_inserts: true
+    order_updates: true
+    batch_versioned_data: true
