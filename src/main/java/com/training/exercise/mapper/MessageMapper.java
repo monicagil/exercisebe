@@ -4,7 +4,7 @@ import com.training.exercise.model.EmailMessage;
 import com.training.exercise.model.dto.EmailMessageDTO;
 import org.mapstruct.Mapper;
 
-@Mapper(componentModel = "spring")
+@Mapper
 public interface MessageMapper {
     EmailMessage createEntityFromEmailMessageDTO(EmailMessageDTO emailMessageDTO);
 }

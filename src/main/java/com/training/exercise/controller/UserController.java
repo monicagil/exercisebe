@@ -19,7 +19,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @Controller
-@RequestMapping("/users")
+@RequestMapping("/")
 @Slf4j
 public class UserController {
 

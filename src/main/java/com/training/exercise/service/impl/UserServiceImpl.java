@@ -11,14 +11,16 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final UserMapper userMapper;
 
     @Autowired
     public UserServiceImpl(RepositoryResolver repositoryResolver, UserMapper userMapper) {
         this.userRepository = repositoryResolver.get(UserRepository.class);
+        this.userMapper = userMapper;
     }
 
     @Override

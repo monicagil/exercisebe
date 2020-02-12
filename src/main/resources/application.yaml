@@ -18,3 +18,12 @@ hibernate:
     order_inserts: true
     order_updates: true
     batch_versioned_data: true
+
+spring:
+  flyway:
+    table: schema_version
+    enabled: true
+    sql-migration-prefix: MOPT
+    db.clean: false
+  batch:
+    initialize-schema: always
