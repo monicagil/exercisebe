@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 
 @Repository
 public class UserRepositoryImpl extends QueryDslRepositorySupport implements UserRepositoryCustom {
-    public UserRepositoryImpl(@Qualifier("userEntityManager")
+    public UserRepositoryImpl(
                                               EntityManager entityManager) {
         super(User.class, entityManager);
     }

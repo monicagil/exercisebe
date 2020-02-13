@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 
 @Repository
 public class EmailMessageRepositoryImpl extends QueryDslRepositorySupport implements EmailMessageRepositoryCustom  {
-    public EmailMessageRepositoryImpl(@Qualifier("emailMessageEntityManager")
+    public EmailMessageRepositoryImpl(
                                         EntityManager entityManager) {
         super(EmailMessage.class, entityManager);
     }

@@ -19,12 +19,12 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/users")
 @Slf4j
 public class UserController {
 
-    protected final UserMapper userMapper;
-    protected final UserService userService;
+    private final UserMapper userMapper;
+    private final UserService userService;
 
     @Autowired
     public UserController(UserService userService) {
@@ -32,7 +32,7 @@ public class UserController {
         this.userMapper = Mappers.getMapper(UserMapper.class);
     }
 
-    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<UserDTO> createUser(
             @Valid
             @NotNull

@@ -42,7 +42,7 @@ public class UserServiceTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         given(repositoryResolver.get(UserRepository.class)).willReturn(userRepository);
-        userService = new UserServiceImpl(repositoryResolver, Mappers.getMapper(UserMapper.class));
+        userService = new UserServiceImpl(repositoryResolver);
     }
 
     @Test

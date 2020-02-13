@@ -6,6 +6,7 @@ import com.training.exercise.persistence.RepositoryResolver;
 import com.training.exercise.persistence.UserRepository;
 import com.training.exercise.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,9 +19,9 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
 
     @Autowired
-    public UserServiceImpl(RepositoryResolver repositoryResolver, UserMapper userMapper) {
+    public UserServiceImpl(RepositoryResolver repositoryResolver) {
         this.userRepository = repositoryResolver.get(UserRepository.class);
-        this.userMapper = userMapper;
+        this.userMapper = Mappers.getMapper(UserMapper.class);
     }
 
     @Override
