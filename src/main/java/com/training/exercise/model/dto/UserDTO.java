@@ -8,8 +8,8 @@ import javax.validation.constraints.Size;
 
 @Data
 public class UserDTO {
-    public enum Sex {
-        MALE, FEMALE
+    public enum Gender {
+        MALE, FEMALE, OTHER
     }
 
     private Long id;
@@ -28,7 +28,7 @@ public class UserDTO {
 
     @NotBlank
     @NotNull
-    private Sex gender;
+    private Gender gender;
 
     private String dir;
 

@@ -7,13 +7,12 @@ import javax.validation.constraints.NotNull;
 
 @Data
 public class EmailMessageDTO {
-    @NotBlank
-    @NotNull
-    String from;
 
-    @NotBlank
-    @NotNull
-    String recipient;
+    private Long id;
+
+    private UserDTO fromUserDTO;
+
+    private UserDTO recipientUserDTO;
 
     @NotBlank
     @NotNull

@@ -8,17 +8,18 @@ import javax.persistence.*;
 @Entity
 @Table(name = "message")
 public class EmailMessage {
-
     @Id
-    @Column(name = "user_id")
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "from")
-    String from;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "id")
+    private User fromId;
 
-    @Column(name = "recipient")
-    String recipient;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "id")
+    private User recipientId;
 
     @Column(name = "subject")
     String subject;

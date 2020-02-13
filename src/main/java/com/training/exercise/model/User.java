@@ -7,8 +7,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user")
 public class User {
-    public enum Sex {
-        MALE, FEMALE
+    public enum Gender {
+        MALE, FEMALE, OTHER
     }
 
     @Id
@@ -26,7 +26,7 @@ public class User {
     private int age;
 
     @Column(name = "gender")
-    private Sex gender;
+    private Gender gender;
 
     @Column(name = "directory")
     private String dir;

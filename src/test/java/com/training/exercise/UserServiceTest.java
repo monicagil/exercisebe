@@ -42,7 +42,7 @@ public class UserServiceTest {
     public void setup() {
         MockitoAnnotations.initMocks(this);
         given(repositoryResolver.get(UserRepository.class)).willReturn(userRepository);
-        userService = new UserServiceImpl(repositoryResolver);
+        userService = new UserServiceImpl(repositoryResolver, null);
     }
 
     @Test
@@ -83,7 +83,7 @@ public class UserServiceTest {
         newUser.setUserName("User name");
         newUser.setAge(11);
         newUser.setEmail("email@com.co");
-        newUser.setGender(User.Sex.FEMALE);
+        newUser.setGender(User.Gender.FEMALE);
 
         User persistedUser = new User();
         persistedUser.setName(newUser.getName());
