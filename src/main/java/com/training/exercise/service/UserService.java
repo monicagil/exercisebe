@@ -5,6 +5,7 @@ import com.training.exercise.model.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.Optional;
 import java.util.Set;
 
 public interface UserService {
@@ -15,7 +16,7 @@ public interface UserService {
 
     User createUser(User user);
 
-    User findByEmail(String email);
+    Optional<User> findByEmail(String email);
 
     Page<User> searchBy(Set<FilterCriteria> filters, Pageable pageable);
 }

@@ -2,6 +2,8 @@ package com.training.exercise.model;
 
 import lombok.Data;
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
 
 @Data
 @Entity
@@ -31,6 +33,7 @@ public class User {
     @Column(name = "directory")
     private String dir;
 
+    @Email(flags = Pattern.Flag.CASE_INSENSITIVE)
     @Column(name = "email")
     private String email;
 }
